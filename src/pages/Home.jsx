@@ -1,7 +1,12 @@
+import { BrowserRouter as Router } from "react-router-dom"
+import Header from "../components/Header"
+
 function Home() {
   return (
-    <div>Salut !</div>
-  );
+    <Router>
+      <Header />
+    </Router>
+  )
 }
 
-export default Home;
+export default Home
