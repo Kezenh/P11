@@ -1,0 +1,18 @@
+footer {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoWhite {
+    width: 122px;
+    object-fit: contain;
+    padding: 66px 0 0;
+}
+
+.copyright {
+    color: white;
+    padding: 40px 0 29px;
+    font-size: 24px;
+}

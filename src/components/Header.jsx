@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logoOrange from "../assets/logoOrange.png";
 import "../styles/Header.css"
 
 function Header() {
     return (
         <header>
-            <img src={logo} alt="logo Kasa" />
+            <img src={logoOrange} alt="orange logo Kasa" />
             <nav>
                 <Link to="/" className="menu">Accueil</Link>
                 <Link to="/" className="menu">A Propos</Link>
