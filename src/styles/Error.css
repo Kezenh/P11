@@ -1,0 +1,19 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+h2 {
+    font-size: 288px;
+    font-weight: 700;
+}
+
+.oups {
+    font-size: 36px;
+}
+
+.salut {
+    margin: 182px 0 160px;
+}

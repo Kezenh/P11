@@ -3,4 +3,13 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    color: #FF6060;
+    font-size: 18px;
+    height: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
