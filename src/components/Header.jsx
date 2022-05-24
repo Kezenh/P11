@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoOrange from "../assets/logoOrange.png";
 import "../styles/Header.css"
+import { useEffect, useState } from "react";
 
 function Header() {
+
+    let [thisIsHome, setThisIsHome] = useState("noTextDeco")
+    let [thisIsAPropos, setThisIsAPropos] = useState("noTextDeco")
+    let currentAdress = useLocation().pathname
+
+    useEffect(() => {
+        function whereIsThis() {
+            if (currentAdress === "/") {
+                setThisIsHome("")
+                setThisIsAPropos("noTextDeco")
+            } else if (currentAdress === "/apropos") {
+                setThisIsAPropos("")
+                setThisIsHome("noTextDeco")
+            }
+        }
+        whereIsThis()
+    }, [currentAdress])
+
     return (
         <header>
             <img src={logoOrange} alt="orange logo Kasa" />
             <nav>
-                <Link to="/" className="menu">Accueil</Link>
-                <Link to="/apropos" className="menu">A Propos</Link>
+                <Link to="/" className={`menu ${thisIsHome}`}>Accueil</Link>
+                <Link to="/apropos" className={`menu ${thisIsAPropos}`}>A Propos</Link>
             </nav>
         </header>
     )

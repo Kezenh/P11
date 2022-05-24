@@ -1,23 +1,15 @@
-import { Link } from "react-router-dom"
 import "../styles/Home.css"
-import { useEffect } from "react"
-import Intro from "../components/Intro"
+import Banner from "../components/Banner"
+import Gallery from "../components/Gallery"
 
 function Home() {
 
-  async function fetchHousings() {
-    const response = await fetch("http://localhost:3000/datas/datas.json")
-    console.log(response)
-    return response
-  }
-
-  useEffect(() => {
-    fetchHousings()
-  }, [])
+  document.title = "Kasa - Accueil"
 
   return (
     <div className="home">
-      <Intro />
+      <Banner />
+      <Gallery />
     </div>
   )
 }

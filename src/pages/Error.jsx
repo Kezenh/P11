@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import "../styles/Error.css"
 
 function Error() {
+
+    document.title = "Kasa - 404 Error !"
+
     return (
         <div className="error">
             <h2>404</h2>

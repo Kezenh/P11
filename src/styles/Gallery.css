@@ -1,0 +1,41 @@
+.gallery {
+    margin: 43px 100px 0;
+    padding: 56px 50px 43px;
+    background: #F7F7F7;
+    border-radius: 25px;
+    display: grid;
+    justify-items: center;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 1440px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.housing {
+    width: 340px;
+    height: 340px;
+    background: linear-gradient(180deg, rgba(255, 96, 96, 1) 0%, rgba(255, 96, 96, 0.5) 100%);
+    display: flex;
+    align-items: flex-end;
+}
+
+.gradientMask {
+    background: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.locationName {
+    color: white;
+    margin: 20px;
+}

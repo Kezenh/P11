@@ -1,9 +1,13 @@
 import "../styles/APropos.css"
+import Banner from "../components/Banner"
 
 function APropos() {
+
+    document.title = "Kasa - A Propos"
+
     return (
         <div className="aPropos">
-            <p>Je suis la page A Propos !</p>
+            <Banner />
         </div>
     )
 }
