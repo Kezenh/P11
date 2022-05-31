@@ -1,0 +1,42 @@
+.album {
+    display: flex;
+    height: 415px;
+    align-items: center;
+    justify-content: center;
+}
+
+.housingImg {
+    object-fit: cover;
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.chevronLeft {
+    position: absolute;
+    left: 123px;
+}
+
+.chevronLeft:hover {
+    cursor: pointer;
+}
+
+.chevronRight {
+    position: absolute;
+    right: 123px;
+}
+
+.chevronRight:hover {
+    cursor: pointer;
+}
+
+.displayNone {
+    display: none;
+}
+
+.counter {
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 25px;
+    color: white;
+}

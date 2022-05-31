@@ -1,6 +1,7 @@
 import "../styles/Logement.css"
 import { useEffect, useState } from "react"
 import Chevrons from "../components/Chevron"
+import Album from "../components/Album"
 
 function Logement() {
 
@@ -8,7 +9,7 @@ function Logement() {
     const [datas, setDatas] = useState([])
     const [id, setId] = useState("")
 
-    function fetchHousing() {
+    function fetchHousings() {
         fetch("http://localhost:3000/datas.json")
             .then((response) => response.json())
             .then((datas) => {
@@ -26,35 +27,33 @@ function Logement() {
 
     useEffect(() => {
         setId(new URLSearchParams(window.location.search).get("id"))
-        fetchHousing()
+        fetchHousings()
     }, [])
 
     useEffect(() => {
         getHousing()
+        document.title = `Kasa - ${housing?.title}`
         // eslint-disable-next-line       
     }, [datas])
 
     return (
         <div className="logement">
-            {housing?.pictures?.map((picture, index) => {
-                return (
-                    <img key={index} src={picture} />
-                )
-            })}
             <div>
+                <Album pictures={housing?.pictures} />
                 <p>{housing?.title}</p>
                 <p>{housing?.location}</p>
                 {housing?.tags?.map((tag, index) => {
                     return (
-                        <p>{tag}</p>
+                        <p key={index}>{tag}</p>
                     )
                 })}
             </div>
             <div>
                 <div>
                     <p>{housing?.host?.name}</p>
-                    <img src={housing?.host?.picture} />
+                    <img src={housing?.host?.picture} alt="host" />
                 </div>
+                <p>{housing?.rating}</p>
             </div>
             <section className="value">
                 <div className="valueTitle" >
@@ -71,7 +70,7 @@ function Logement() {
                 <div id="valueDescription2" className="valueDescription">
                     {housing?.equipments?.map((equipment, index) => {
                         return (
-                            <p>{equipment}</p>
+                            <p key={index}>{equipment}</p>
                         )
                     })}
                 </div>
