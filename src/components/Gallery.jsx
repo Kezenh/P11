@@ -24,7 +24,7 @@ function Gallery() {
         <section className="gallery">
             {datas?.map((data, index) => {
                 return (
-                    <Link key={index} to={`/logement/?id=${data.id}`}>
+                    <Link className="noTextDeco" key={index} to={`/logement/?id=${data.id}`}>
                         <div className="gradientMask">
                             <div className="housing">
                                 <p className="locationName">{data.title}</p>
