@@ -6,7 +6,7 @@
 }
 
 .chevronUp {
-    width: 14px;
+    height: 24px;
     display: none;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .chevronDown {
-    width: 14px;
+    height: 24px;
 }
 
 .chevronDown:hover {

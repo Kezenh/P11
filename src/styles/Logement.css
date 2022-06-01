@@ -1,4 +1,96 @@
 .logement {
     flex: 1;
-    margin: 25px 100px
+    margin: 25px 100px 0;
+}
+
+.housingTitle {
+    font-size: 36px;
+    margin: 30px 0 0;
+}
+
+.housingTags {
+    display: flex;
+    margin: 20px 0 0;
+}
+
+.housingTag {
+    min-width: 115px;
+    height: 25px;
+    background: #FF6060;
+    margin: 0 10px 0 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.housingDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.host {
+    display: flex;
+    margin: 24px 0 0;
+}
+
+.hostName {
+    margin: 6px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hostPicture {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}
+
+.star {
+    margin: 24px 0 0 10px;
+}
+
+.hostDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.housingDecription {
+    width: 582px;
+}
+
+.housingDecriptionHeader {
+    display: flex;
+    width: 100%;
+    height: 47px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 33px 0 18px;
+    background: #FF6060;
+    border-radius: 5px;
+}
+
+.housingDecriptionTitle {
+    color: white;
+}
+
+.housingDecriptionText {
+    position: relative;
+    padding: 36px 27px 19px 18px;
+    background: #F7F7F7;
+    border-radius: 5px;
+    margin: -9px 0;
+    z-index: -1;
+    display: none;
+}
+
+.housingBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 26px 0 0;
 }

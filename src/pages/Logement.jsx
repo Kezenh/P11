@@ -8,6 +8,7 @@ function Logement() {
     const [housing, setHousing] = useState({})
     const [datas, setDatas] = useState([])
     const [id, setId] = useState("")
+    const [rating, setRating] = useState([])
 
     function fetchHousings() {
         fetch("http://localhost:3000/datas.json")
@@ -25,6 +26,14 @@ function Logement() {
         }))
     }
 
+    function createRating() {
+        let arr = [false, false, false, false, false]
+        for (let i = 0; i < housing?.rating; i++) {
+            arr[i] = true
+        }
+        setRating(arr)
+    }
+
     useEffect(() => {
         setId(new URLSearchParams(window.location.search).get("id"))
         fetchHousings()
@@ -32,49 +41,70 @@ function Logement() {
 
     useEffect(() => {
         getHousing()
+        createRating()
         document.title = `Kasa - ${housing?.title}`
-        // eslint-disable-next-line       
-    }, [datas])
+        // eslint-disable-next-line
+    }, [datas, housing])
 
     return (
         <div className="logement">
-            <div>
-                <Album pictures={housing?.pictures} />
-                <p>{housing?.title}</p>
-                <p>{housing?.location}</p>
-                {housing?.tags?.map((tag, index) => {
-                    return (
-                        <p key={index}>{tag}</p>
-                    )
-                })}
-            </div>
-            <div>
+            <Album pictures={housing?.pictures} />
+            <div className="housingDetails">
                 <div>
-                    <p>{housing?.host?.name}</p>
-                    <img src={housing?.host?.picture} alt="host" />
+                    <p className="housingTitle">{housing?.title}</p>
+                    <p>{housing?.location}</p>
+                    <div className="housingTags">
+                        {housing?.tags?.map((tag, index) => {
+                            return (
+                                <p className="housingTag" key={index}>{tag}</p>
+                            )
+                        })}
+                    </div>
                 </div>
-                <p>{housing?.rating}</p>
+                <div className="hostDetails">
+                    <div className="host">
+                        <div className="hostName">
+                            {housing?.host?.name.split(" ").map((name, index) => {
+                                return (
+                                    <p key={index}>{name}</p>
+                                )
+                            })}
+                        </div>
+                        <img className="hostPicture" src={housing?.host?.picture} alt="host" />
+                    </div>
+                    <div className="rating">
+                        {rating.map((star, index) => {
+                            return (
+                                star ? <svg className="star" key={index} width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#FF6060" /></svg>
+                                    :
+                                    <svg className="star" key={index} width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3" /></svg>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
-            <section className="value">
-                <div className="valueTitle" >
-                    <p className="title">Description</p>
-                    <Chevrons number="1" />
-                </div>
-                <p id="valueDescription1" className="valueDescription">{housing?.description}</p>
-            </section>
-            <section className="value">
-                <div className="valueTitle" >
-                    <p className="title">Équipements</p>
-                    <Chevrons number="2" />
-                </div>
-                <div id="valueDescription2" className="valueDescription">
-                    {housing?.equipments?.map((equipment, index) => {
-                        return (
-                            <p key={index}>{equipment}</p>
-                        )
-                    })}
-                </div>
-            </section>
+            <div className="housingBox">
+                <section className="housingDecription">
+                    <div className="housingDecriptionHeader" >
+                        <p className="housingDecriptionTitle">Description</p>
+                        <Chevrons number="1" />
+                    </div>
+                    <p id="valueDescription1" className="housingDecriptionText">{housing?.description}</p>
+                </section>
+                <section className="housingDecription">
+                    <div className="housingDecriptionHeader" >
+                        <p className="housingDecriptionTitle">Équipements</p>
+                        <Chevrons number="2" />
+                    </div>
+                    <div id="valueDescription2" className="housingDecriptionText">
+                        {housing?.equipments?.map((equipment, index) => {
+                            return (
+                                <p key={index}>{equipment}</p>
+                            )
+                        })}
+                    </div>
+                </section>
+            </div>
         </div>
     )
 }
