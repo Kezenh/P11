@@ -10,10 +10,27 @@ h2 {
     font-weight: 700;
 }
 
-.oups {
+.errorMessage {
     font-size: 36px;
 }
 
-.salut {
+.goToHome {
     margin: 182px 0 160px;
+}
+
+@media screen and (max-width: 1023px) {
+    h2 {
+        margin: 198px 0 0 0;
+        font-size: 96px;
+    }
+
+    .errorMessage {
+        font-size: 18px;
+        margin: 0 58px 0 57px;
+        text-align: center;
+    }
+
+    .goToHome {
+        font-size: 14px;
+    }
 }

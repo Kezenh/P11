@@ -3,10 +3,25 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 100px 0px;
+    padding: 40px 100px 0;
 }
 
 .menu {
     font-size: 24px;
     padding-left: 57px;
+}
+
+@media screen and (max-width: 1023px) {
+    header {
+        padding: 20px 20px 0;
+    }
+
+    .menu {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+    .logoOrange {
+        width: 145px;
+    }
 }

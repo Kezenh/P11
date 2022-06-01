@@ -13,7 +13,7 @@ function Banner() {
 
     return isThisAPropos() ? (
         <section className="banner">
-            <div className="mask">
+            <div className="aProposMask">
                 <img src={aProposBackground} alt="aPropos background" className="imgBanner" />
             </div>
         </section>

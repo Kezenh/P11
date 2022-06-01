@@ -1,6 +1,5 @@
 .album {
     display: flex;
-    height: 415px;
     align-items: center;
     justify-content: center;
 }
@@ -39,4 +38,26 @@
     align-self: flex-end;
     margin-bottom: 25px;
     color: white;
+}
+
+@media screen and (max-width: 1023px) {
+    .housingImg {
+        height: 255px;
+        border-radius: 10px;
+    }
+
+    .chevronLeft {
+        left: 6px;
+        height: 20px;
+    }
+
+    .chevronRight {
+        right: 6px;
+        height: 20px;
+    }
+
+    .counter {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+    }
 }

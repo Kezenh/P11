@@ -24,7 +24,7 @@ function Header() {
 
     return (
         <header>
-            <img src={logoOrange} alt="orange logo Kasa" />
+            <img className="logoOrange" src={logoOrange} alt="orange logo Kasa" />
             <nav>
                 <Link to="/" className={`menu ${thisIsHome}`}>Accueil</Link>
                 <Link to="/apropos" className={`menu ${thisIsAPropos}`}>A Propos</Link>

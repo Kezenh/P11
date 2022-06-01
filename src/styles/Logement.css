@@ -70,7 +70,7 @@
     height: 47px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 33px 0 18px;
+    padding: 0 18px 0 20px;
     background: #FF6060;
     border-radius: 5px;
 }
@@ -93,4 +93,92 @@
     display: flex;
     justify-content: space-between;
     margin: 26px 0 0;
+}
+
+@media screen and (max-width: 1023px) {
+    .logement {
+        margin: 27px 20px 0;
+    }
+
+    .housingTitle {
+        font-size: 18px;
+        margin: 15px 0 0;
+    }
+
+    .housingLocation {
+        font-size: 14px;
+        margin: 5px 0 0;
+    }
+
+    .housingTag {
+        min-width: 84px;
+        height: 18px;
+        background: #FF6060;
+        margin: 0 10px 0 0;
+        border-radius: 5px;
+        color: white;
+        font-size: 10px;
+        padding: 0 7px;
+    }
+
+    .hostDetails {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        margin: 16px 0 0;
+    }
+
+    .housingDetails {
+        flex-direction: column;
+    }
+
+    .hostPicture {
+        width: 32px;
+        height: 32px;
+    }
+
+    .star {
+        margin: 0 0 0 5px;
+        width: 15px;
+    }
+
+    .host {
+        margin: 0;
+    }
+
+    .hostNameText {
+        font-size: 12px;
+    }
+
+    .hostName {
+        margin: 0 10px 0 0;
+    }
+
+    .housingBox {
+        flex-direction: column;
+        margin: -4px 0 0;
+    }
+
+    .housingDecription {
+        width: 335px;
+        margin: 20px 0 0;
+    }
+
+    .housingDecriptionText {
+        font-size: 12px;
+        padding: 23px 7px 1px 11px;
+    }
+
+    .housingDecriptionHeader {
+        padding: 0 7px 0 11px;
+        height: 30px;
+    }
+
+    .housingDecriptionTitle {
+        font-size: 13px;
+    }
+
+    .equipmentText {
+        font-size: 12px;
+    }
 }
